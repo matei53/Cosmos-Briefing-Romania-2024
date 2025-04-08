@@ -1,0 +1,347 @@
+
+/*Cand apas pe o ancora, trebuie sa ma asigur ca elementul nu este acoperit de meniul drop-down*/
+article,section{
+  scroll-margin-top: 75px;
+}
+
+/*Detalii pentru body*/
+body {
+  background-color:#111036;
+  background: url(poze/sky.png);
+  background-repeat: repeat;
+  background-size: auto;
+  color: ivory;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/*Detalii pentru header, deasupra meniului drop-down*/
+header {
+  background-image:url(poze/headersky.png);
+  background: linear-gradient(transparent, rgb(20, 9, 72));
+  padding: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+header > h1 {
+  color: white;
+  font-size: 2.5em;
+  margin: 0;
+}
+header > p {
+  line-height:30px;
+  font-style: italic;
+  color: white;
+}
+
+/*MENIUL DROP-DOWN*/
+nav ul{
+  list-style-type: none; /*sterg bullet point-urile*/
+}
+nav ul, nav li{
+  margin:0;
+  padding:0;
+}
+nav a{
+  text-decoration: none; /*Sterg underline-ul ancorei*/
+  color:white;
+  display: block; /*meniul are elementele li plasate in centru, fixe*/
+  font-weight: bold;
+  transition: all 0.3s;
+}
+nav {
+  background-color:rgb(20, 9, 72);
+  height: 50px;
+  width:100%;
+  position:sticky; /*Bara de navigare ramane pe pagina*/
+  top:0;
+  margin-top:-10px;
+  z-index:3; /*Meniul si submeniurile apar deasupra elementelor din restul site-ului*/
+}
+nav>ul.meniu>li>ul.submeniu{
+  display: none;
+}
+nav>ul.meniu>li:hover>ul.submeniu{
+  display: block; /*Submeniurile apar numai cand tin mausul pe element*/
+}
+ul.meniu{
+  display:flex; /*Elementele listei apar una langa alta*/
+  flex-flow:row nowrap;
+  justify-content: space-around;
+}
+@media (min-width:850px){ /*Cand pagina e mai mare, este lasat un spatiu gol la dreapta si stanga meniului*/
+  ul.meniu{
+    padding-left:100px;
+    padding-right:100px;
+  }
+}
+ul.meniu>li{
+  height:50px;
+  line-height: 50px; /*Inaltimea liniei de text coincide cu inaltimea barei de navigare*/
+  text-align: center;
+  flex:1 200px; /*Spatiul de interactie cu fiecare element li*/
+}
+ul.submeniu>li{
+  height:auto; /*Inaltimea unui buton de submeniu depinde de lungimea textului*/
+  line-height: 50px;
+  text-align: center;
+  border:1px solid black;
+  background-color: rgb(28, 17, 75);
+  opacity:95%;
+}
+nav a:hover{
+  background-color:rgb(66, 52, 114);
+}
+
+/*FOOTER*/
+footer {
+  text-align: center;
+  background-image:url(poze/headersky.png);
+  border-top: 5px solid rgb(255, 255, 255);
+}
+footer > div#footertop{
+  margin:0;
+  padding:5px;
+  background: linear-gradient(rgba(125, 129, 211, 1), rgba(125, 129, 211, 0.9)) /*Gradient de sus pana jos pentru liniile din footer*/
+}
+/*Prima linie footer - 3 elemente p*/
+footer > div#footertop > p:first-child{
+  font-size:19px;
+  font-weight:900;
+  margin:10px;
+}
+footer > div#footertop > p:first-child::before{
+  content: "✨";
+}
+footer > div#footertop > p:first-child::after{
+  content: "✨";
+}
+footer > div#footertop > p:nth-child(2){
+  font-size:50px;
+  font-weight:1000;
+  margin:0;
+}
+footer > div#footertop > p:nth-child(3){
+  margin-top:10px;
+  font-style:italic;
+}
+/*A doua linie footer - sponsorii (asemanator meniului din header)*/
+footer > aside{
+  font-size:20px;
+  background: linear-gradient(rgba(170, 174, 246, 0.9), rgba(170, 174, 246, 0.8));
+  padding: 1px;
+  padding-bottom: 0;
+  margin:0;
+  text-align:center;
+}
+footer > aside > h4{
+  margin:0;
+  margin-top:10px;
+}
+ul#meniufooter{
+  list-style-type: none;
+  display:flex;
+  flex-flow:row wrap; /*Cand pagina devine mai mica, elementele se aranjeaza pe linii noi*/
+  justify-content: space-around;
+  margin:0;
+  padding-left:0;
+}
+ul#meniufooter > li{
+  text-align: center;
+  flex:1 200px;
+  padding:0;
+}
+ul#meniufooter > li > a > figure{
+  margin-bottom: 5px;
+}
+/*A treia linie pentru footer*/
+footer > div#footerbottom{
+  background: linear-gradient(rgba(56, 43, 124, 0.8), rgba(56, 43, 124, 0.5));
+  padding:5px;
+}
+/*Animatie pentru data evenimentului*/
+#footertop > p:nth-child(2){
+  animation: pulse 1.5s infinite alternate;
+  opacity:0.8;
+}
+@keyframes pulse  {
+  0%{
+    opacity: 0.8;
+    transform: scale(0.8);
+  }
+  100%{
+    opacity:1;
+    transform: scale(1);
+  }
+}
+
+/*Proprietati pentru toate elementele parinte din main + animatia pentru ele*/
+section {
+  border:1px solid white;
+  margin:15px;
+  padding:20px;
+  padding-top:5px;
+  padding-left:35px;
+  font-size:20px;
+  opacity:0;
+  color:rgb(198, 171, 255);
+  border:1px solid rgb(198, 171, 255);
+  background-color: rgba(198, 171, 255, 0.1);
+  animation: section 1.5s forwards;
+}
+#intrebari{
+  animation-delay:0s;
+}
+#detaliicontact{
+  animation-delay:0.2s;
+}
+#harta{
+  animation-delay:0.4s;
+}
+#formular{
+  animation-delay:0.6s;
+}
+@keyframes section{
+  0%{
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100%{
+    opacity:1;
+    transform: scale(1);
+    color:white;
+    border:1px solid rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/*Animatie pentru raspunsurile la intrebari si pentru liniile cu datele de contact*/
+#intrebari > p, tr{
+  animation: lines 2s forwards;
+  opacity:0;
+}
+#intrebari > p:nth-child(3), tr:nth-child(1){
+  animation-delay:0s;
+}
+#intrebari > p:nth-child(5), tr:nth-child(2){
+  animation-delay:1s;
+}
+#intrebari > p:nth-child(7), tr:nth-child(3){
+  animation-delay:2s;
+}
+@keyframes lines{
+  0%{
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100%{
+    opacity:1;
+    transform: translateX(0px);
+  }
+}
+
+th::after{
+  content:" - ";
+}
+th{
+  width:35px;
+}
+#intrebari > h3::before{
+  content:"→ ";
+}
+#harta{
+  text-align:center;
+  padding-left:20px;
+  border:2px solid black;
+}
+
+@media (min-width:1000px){
+  #intrebari{
+    grid-area:a;
+  }
+  #detaliicontact{
+    grid-area:b;
+  }
+  #harta{
+    grid-area:c;
+  }
+  #formular{
+    grid-area:d;
+  }
+  main{
+    padding:10px;
+    padding-left:30px;
+    padding-right:30px;
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-gap:15px;
+    grid-template-areas:
+    "a a a c c"
+    "b b b c c"
+    "d d d d d";
+  }
+  #harta > iframe{
+    width:93%;
+    height:80%; 
+  }
+}
+@media (max-width:1000px){
+  main{
+    padding:10px;
+  }
+  #harta > iframe{
+    width:93%;
+    aspect-ratio: 16/9; 
+  }
+  #harta > h2{
+    text-align: left;
+    padding-left:20px;
+  }
+}
+
+
+label, button{
+  font-size:25px;
+}
+
+input,textarea{
+  margin-top:5px;
+  margin-bottom:5px;
+  font-size:30px;
+  border:2px solid white;
+  background-color:rgba(255, 255, 255, 0.15);
+  color:white;
+  width:97%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+textarea{
+  resize:none;
+}
+
+.popup {
+  box-sizing: border-box;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 2px solid #f5c6cb;
+  border-radius: 5px;
+  padding: 5px 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  width:301px;
+}
+.buton {
+  background-color: #DA4353;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  padding: 2px 5px;
+}
+@keyframes disparitie{
+  0% {opacity:1;}
+  100% {opacity:0;}
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title id="titlu">CBR24</title>
+<link rel="icon" type="image/png" href="poze/cbr2.png">
+  <link rel="stylesheet" href="login.css">
+  <script src="login.js"></script>
+</head>
+<body>
+
+    <header id="inceput">
+        <h1>Cosmos Briefing Romania 2024</h1>
+        <p id="subtitlu">&nbsp;</p>
+    
+      </header>
+      <nav>
+          <ul class="meniu">
+            <li><a href="acasa.html#inceput">Acasă</a>
+              <ul class="submeniu">
+                <li><a href="acasa.html#desc">Descriere scurta</a></li>
+                <li><a href="acasa.html#invitati">Invitati speciali</a></li>
+                <li><a href="acasa.html#hl">Highlights</a></li>
+                <li><a href="acasa.html#video">Prezentare video</a></li>
+              </ul>
+            </li>
+            <li><a href="despre.html#despre">Despre</a>
+              <ul class="submeniu">
+                <li><a href="despre.html#despre1">Cosmos Briefing</a></li>
+                <li><a href="despre.html#despre2">ESA</a></li>
+                <li><a href="despre.html#despre345">Parteneri</a></li>
+              </ul>
+            </li>
+            <li><a href="program.html#program">Program</a></li>
+            <li><a href="contact.html#contact">Contact</a>
+              <ul class="submeniu">
+                <li><a href="contact.html#intrebari">Intrebari</a></li>
+                <li><a href="contact.html#detaliicontact">Detalii contact</a></li>
+                <li><a href="contact.html#formular">Formular întrebări</a></li>
+              </ul>
+            </li>
+          </ul>
+      </nav>
+    <main>
+    <div id="login">
+        <h2>Autentificare</h2>
+        <form class="form">
+            <label for="user">Utilizator</label><br>
+            <input type="text" id="user" spellcheck="false" required><br>
+            <label for="user">Email</label><br>
+            <input type="text" id="email" spellcheck="false" required><br>
+            <label for="user">Parola</label><br>
+            <input type="password" id="parola" spellcheck="false" required><br><br>
+            <button type="submit">Logare</button>
+        </form>
+        <p id="eroare1"></p>
+    </div>
+    
+    <div id="signup">
+        <h2>Înregistrare</h2>
+        <form class="form">
+            <label for="user">Utilizator</label><br>
+            <input type="text" id="user2" spellcheck="false" required><br>
+            <label for="user">Email</label><br>
+            <input type="text" id="email2" spellcheck="false" required><br>
+            <label for="user">Parola</label><br>
+            <input type="password" id="parola2" spellcheck="false" required><br><br>
+            <button type="submit">Înregistrare</button>
+        </form>
+        <p id="eroare2"></p>
+    </div>
+
+    <div id="userpage">
+      <h2 id="welcome">Bine ai venit, <span id="username"></span>!</h2>
+      <form class="form">
+        <label for="user">Schimbă numele</label><br>
+        <input type="text" id="user3" spellcheck="false"><br>
+        <label for="user">Schimbă email-ul</label><br>
+        <input type="text" id="email3" spellcheck="false"><br>
+        <label for="user">Schimbă parola</label><br>
+        <input type="password" id="parola3" spellcheck="false"><br><br>
+        <button type="submit">Schimbă</button><br><br>
+      </form>
+      <p id="eroare3"></p>
+      <button id="logout">Delogare</button>
+    </div>
+    </main>
+
+
+  <footer>
+    <div id="footerbottom">
+      <h3>Cosmos Briefing 2010 - 2024</h3>
+      <p>© European Space Agency</p>
+    </div>
+  </footer>
+</body>
+
+
+</html>

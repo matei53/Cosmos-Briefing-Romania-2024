@@ -1,0 +1,142 @@
+
+  input{
+    margin-top:5px;
+    margin-bottom:5px;
+    font-size:30px;
+  }
+  label{
+    font-weight: bold;
+    font-size:30px;
+  }
+#login, #signup, #userpage{
+    text-align:center;
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-top:20px;
+    margin-bottom:20px;
+    width: 90%;
+    margin-left:auto;
+    margin-right:auto;
+}
+#login > h2, #signup > h2, #welcome{
+    text-decoration: underline;
+    font-size:250%;
+}
+button{
+    font-size:30px;
+    margin:auto;
+}
+#eroare1, #eroare2, #eroare3{
+    font-size:200%;
+}
+#logout{
+  margin-bottom:30px;
+}
+
+
+  /*Cand apas pe o ancora, trebuie sa ma asigur ca elementul nu este acoperit de meniul drop-down*/
+  article,section{
+    scroll-margin-top: 75px;
+  }
+  
+  /*Detalii pentru body*/
+  body {
+    background-color:#111036;
+    background: url(poze/sky.png);
+    background-repeat: repeat;
+    background-size: auto;
+    color: ivory;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /*Detalii pentru header, deasupra meniului drop-down*/
+  header {
+    background-image:url(poze/headersky.png);
+    background: linear-gradient(transparent, rgb(20, 9, 72));
+    padding: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+  header > h1 {
+    color: white;
+    font-size: 2.5em;
+    margin: 0;
+  }
+  header > p {
+    line-height:30px;
+    font-style: italic;
+    color: white;
+  }
+  
+  /*MENIUL DROP-DOWN*/
+  nav ul{
+    list-style-type: none; /*sterg bullet point-urile*/
+  }
+  nav ul, nav li{
+    margin:0;
+    padding:0;
+  }
+  nav a{
+    text-decoration: none; /*Sterg underline-ul ancorei*/
+    color:white;
+    display: block; /*meniul are elementele li plasate in centru, fixe*/
+    font-weight: bold;
+    transition: all 0.3s;
+  }
+  nav {
+    background-color:rgb(20, 9, 72);
+    height: 50px;
+    width:100%;
+    position:sticky; /*Bara de navigare ramane pe pagina*/
+    top:0;
+    margin-top:-10px;
+    z-index:3; /*Meniul si submeniurile apar deasupra elementelor din restul site-ului*/
+  }
+  nav>ul.meniu>li>ul.submeniu{
+    display: none;
+  }
+  nav>ul.meniu>li:hover>ul.submeniu{
+    display: block; /*Submeniurile apar numai cand tin mausul pe element*/
+  }
+  ul.meniu{
+    display:flex; /*Elementele listei apar una langa alta*/
+    flex-flow:row nowrap;
+    justify-content: space-around;
+  }
+  @media (min-width:850px){ /*Cand pagina e mai mare, este lasat un spatiu gol la dreapta si stanga meniului*/
+    ul.meniu{
+      padding-left:100px;
+      padding-right:100px;
+    }
+  }
+  ul.meniu>li{
+    height:50px;
+    line-height: 50px; /*Inaltimea liniei de text coincide cu inaltimea barei de navigare*/
+    text-align: center;
+    flex:1 200px; /*Spatiul de interactie cu fiecare element li*/
+  }
+  ul.submeniu>li{
+    height:auto; /*Inaltimea unui buton de submeniu depinde de lungimea textului*/
+    line-height: 50px;
+    text-align: center;
+    border:1px solid black;
+    background-color: rgb(28, 17, 75);
+    opacity:95%;
+  }
+  nav a:hover{
+    background-color:rgb(66, 52, 114);
+  }
+  
+  /*FOOTER*/
+  footer {
+    text-align: center;
+    background-image:url(poze/headersky.png);
+  }
+  
+  /*A treia linie pentru footer*/
+  footer > div#footerbottom{
+    background: linear-gradient(rgb(20, 9, 72),rgba(19, 9, 72, 0.5));
+    padding:5px;
+  }
